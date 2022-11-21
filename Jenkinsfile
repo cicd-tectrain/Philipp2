@@ -14,10 +14,14 @@ pipeline {
     }
 
     stage('Deploy') {
+        when {
+            branch 'feature/*'
+            beforeAgent true
+        }
+
       steps {
         echo 'Deploying'
       }
     }
-
   }
 }
